@@ -1,7 +1,10 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QWidget, QHBoxLayout, QFrame
+
 from qfluentwidgets import SmoothScrollArea, PixmapLabel
+
+from supervision.utils import resource_path
 
 
 class DocumentUI(SmoothScrollArea):
@@ -9,7 +12,7 @@ class DocumentUI(SmoothScrollArea):
         super().__init__(parent=parent)
 
         self.label = PixmapLabel(self)
-        self.pixmap = QPixmap(r".\src\dark.jpeg")
+        self.pixmap = QPixmap(resource_path(r".\src\dark.jpeg"))
         self.setWidget(self.label)
 
     def resizeEvent(self, event):

@@ -6,9 +6,7 @@ from PyQt5.QtCore import Qt, QThread, pyqtSignal
 from PyQt5.QtWidgets import QHBoxLayout
 from PyQt5.QtGui import QFont
 
-from qfluentwidgets import (
-    MessageBoxBase, SubtitleLabel, InfoBar, InfoBarPosition, ProgressBar, StrongBodyLabel
-)
+from qfluentwidgets import MessageBoxBase, SubtitleLabel, InfoBar, InfoBarPosition, ProgressBar, StrongBodyLabel
 
 from supervision.card.Setting import cfg
 

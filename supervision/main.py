@@ -20,6 +20,7 @@ from qfluentwidgets import (
     setFont, setThemeColor, FluentIcon, SplashScreen
 )
 
+from supervision.utils import resource_path
 from card.MainInterface import MainInterface
 from card.Document import Document
 from card.Setting import Setting
@@ -81,7 +82,7 @@ class Window(MSFluentWindow):
         self.titleBar.maxBtn.hide()
         self.titleBar.setDoubleClickEnabled(False)
 
-        icon = QtGui.QIcon(r".\src\Sprite-0001.ico")
+        icon = QtGui.QIcon(resource_path(r".\src\Sprite-0001.ico"))
         self.titleBar.iconLabel.setPixmap(icon.pixmap(25, 25))
         self.titleBar.iconLabel.setFixedSize(36, 36)
 
@@ -96,7 +97,7 @@ class Window(MSFluentWindow):
         """
         self.titleBar.titleLabel.setStyleSheet(titleLabelStyle)
 
-        self.splashScreen = SplashScreen(QIcon(r'.\src\setup.jpg'), self)
+        self.splashScreen = SplashScreen(QIcon(resource_path(r'.\src\setup.jpg')), self)
         self.splashScreen.setIconSize(QSize(self.width(), self.height()))
         self.splashScreen.setGeometry(0, 0, self.width(), self.height())
         self.splashScreen.raise_()

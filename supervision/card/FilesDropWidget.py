@@ -6,6 +6,8 @@ from PyQt5.QtWidgets import QWidget, QLabel
 
 from qfluentwidgets import TeachingTip, TeachingTipTailPosition, InfoBarIcon, isDarkTheme
 
+from supervision.utils import resource_path
+
 
 class FilesDropWidget(QWidget):
     pathChanged = pyqtSignal(str)
@@ -19,7 +21,7 @@ class FilesDropWidget(QWidget):
         self.setFixedSize(360, 120)
         self.setObjectName("FilesDropWidget")
 
-        self.font_id = QFontDatabase.addApplicationFont(r".\src\Lolita.ttf")
+        self.font_id = QFontDatabase.addApplicationFont(resource_path(r".\src\Lolita.ttf"))
         if self.font_id != -1:
             self.font_family = QFontDatabase.applicationFontFamilies(self.font_id)[0]
             self.font_18 = QFont(self.font_family)

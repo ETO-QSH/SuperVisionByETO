@@ -9,6 +9,7 @@ from qfluentwidgets import (
 )
 
 from supervision.card.ExpandComboCard import ExpandComboCard
+from supervision.utils import resource_path
 
 
 class Config(QConfig):
@@ -148,7 +149,7 @@ class Setting(ScrollArea):
 
     def __setQss(self):
         self.scrollWidget.setObjectName('scrollWidget')
-        with open(f'./config/setting.qss', encoding='utf-8') as f:
+        with open(resource_path(f'./config/setting.qss'), encoding='utf-8') as f:
             self.setStyleSheet(f.read())
 
     def __onSaveFolderCardClicked(self):

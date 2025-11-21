@@ -3,7 +3,9 @@ from PyQt5.QtGui import QPainter, QPixmap, QContextMenuEvent
 from PyQt5.QtWidgets import QWidget, QGridLayout
 
 from qfluentwidgets import HorizontalPipsPager
+
 from supervision.card.FlipView import HorizontalFlipView
+from supervision.utils import resource_path
 
 
 class DIDshow(QWidget):
@@ -62,7 +64,7 @@ class DIDshow(QWidget):
         # """)
 
     def _create_placeholder(self) -> QPixmap:
-        src = QPixmap(r"./src/None.png")
+        src = QPixmap(resource_path(r"./src/None.png"))
 
         canvas = QPixmap(self.width, self.height)
         canvas.fill(Qt.transparent)

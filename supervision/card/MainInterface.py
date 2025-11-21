@@ -17,6 +17,7 @@ from supervision.card.FileListSettingCard import FileListSettingCard
 from supervision.card.FilesDropWidget import FilesDropWidget
 from supervision.tool import process_files_threaded, clear_processed_cache
 from supervision.card.PixmapShow import DIDshow
+from supervision.utils import resource_path
 from supervision.card.Setting import cfg
 
 
@@ -28,7 +29,7 @@ class MainInterface(QWidget):
         self.setObjectName("MainInterface")
         self.resize(720, 560)
 
-        self.font_id = QFontDatabase.addApplicationFont(r".\src\Lolita.ttf")
+        self.font_id = QFontDatabase.addApplicationFont(resource_path(r".\src\Lolita.ttf"))
         if self.font_id != -1:
             self.font_family = QFontDatabase.applicationFontFamilies(self.font_id)[0]
             self.font_20 = QFont(self.font_family)
